@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="news"
+            type="com.example.nitesh.playo.model.News" />
+
+        <variable
+            name="clickListener"
+            type="com.example.nitesh.playo.view.RecyclerViewOnItemClickHandler"></variable>
+
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/news_item_height"
+        android:onClick="@{clickListener::onClick}">
+
+        <RelativeLayout
+            android:id="@+id/list_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/margin_bottom"
+            android:paddingLeft="@dimen/main_margin_left"
+            android:paddingRight="@dimen/main_margin_right"
+            android:paddingTop="@dimen/margin_top">
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:contentDescription="Thumbnail"
+                android:scaleType="fitXY"
+                android:src="@drawable/images"/>
+
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/image_view"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/image_view"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:text="@{news.title}"/>
+
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/image_view"
+                android:layout_marginLeft="10dp"
+                android:layout_toLeftOf="@+id/section"
+                android:layout_toRightOf="@+id/image_view"
+                android:drawableLeft="@drawable/ic_time"
+                android:drawablePadding="4dp"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="12sp"
+                app:date="@{news.createdAt}"/>
+
+            <TextView
+                android:id="@+id/section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/image_view"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/bg_grey_rectangular_border"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="Story"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/darker_gray"></View>
+    </RelativeLayout>
+</layout>

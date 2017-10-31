@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">PlayO</string>
+    <string name="no_internet">No internet.</string>
+
+    <!--NEWS-->
+    <string name="one_minute_ago">1 Minute ago</string>
+    <string name="minutes_ago">%1$d Minutes ago</string>
+    <string name="one_hour_ago">1 Hour ago</string>
+    <string name="hours_ago">%1$d Hours ago</string>
+    <string name="one_day_ago">1 Day ago</string>
+    <string name="days_ago">%1$d Days ago</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">search</string>
+    <string name="menu_search">Search</string>
+</resources>
